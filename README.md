@@ -27,3 +27,21 @@ You will notice that each part has "Milestone" labels and dates. This project is
 - how to view the project (open a browser...go to ip and port...)
     - I went to my browser and typed in "http://localhost:81" and got this result:
     ![HelloWorld](images/HelloWorld.png)
+
+## Part 2 - GitHub Actions and DockerHub
+
+- Create DockerHub public repo
+  - process to create
+- Allow DockerHub authentication via CLI using Dockhub credentials
+- Configure GitHub Secrets
+  - what credentials are needed - DockerHub credentials (do not state your credentials)
+  - set secrets and secret names
+- Configure GitHub Workflow
+  - variables to change (repository, etc.)- Create DockerHub public repo
+  - process to create
+- Allow DockerHub authentication via CLI using Dockhub credentials
+- Configure GitHub Secrets
+  - what credentials are needed - DockerHub credentials (do not state your credentials)
+  - set secrets and secret names
+- Configure GitHub Workflow
+  - variables to change (repository, etc.)
