@@ -31,17 +31,17 @@ You will notice that each part has "Milestone" labels and dates. This project is
 ## Part 2 - GitHub Actions and DockerHub
 
 - Create DockerHub public repo
-  - process to create
+  - You create an account on Dockerhub. Once inside, navigate to the Repositories section and click on "Create Repository." Name your repository and make sure "Public" is checked off then hit "Create".
+
 - Allow DockerHub authentication via CLI using Dockhub credentials
+  - Navigate to your account settings and click on "Security'. Once there, click on "New Access Token". Name the token (in my case, I named it "dockerhub-rwd") and put read, write, and delete on it. Once the token is created, save the token's contents in either Microsoft Word or Notepad just in case.
+
 - Configure GitHub Secrets
   - what credentials are needed - DockerHub credentials (do not state your credentials)
+    - You need to have the docker key that you saved in either Microsft Word or Notepad.
   - set secrets and secret names
+    - 
+
 - Configure GitHub Workflow
   - variables to change (repository, etc.)- Create DockerHub public repo
   - process to create
-- Allow DockerHub authentication via CLI using Dockhub credentials
-- Configure GitHub Secrets
-  - what credentials are needed - DockerHub credentials (do not state your credentials)
-  - set secrets and secret names
-- Configure GitHub Workflow
-  - variables to change (repository, etc.)
