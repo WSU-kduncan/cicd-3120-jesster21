@@ -40,8 +40,45 @@ You will notice that each part has "Milestone" labels and dates. This project is
   - what credentials are needed - DockerHub credentials (do not state your credentials)
     - You need to have the docker key that you saved in either Microsft Word or Notepad.
   - set secrets and secret names
-    - 
+    - Log into your Github account and find "Settings" and look on the left hand side for "Secrets". Click on "Action" and create two secrets by clicking on "New Repository Secret", one for your user name and one for your password. In my case, I named them "DOCKER_USERNAME" and "DOCKER_TOKEN".
 
 - Configure GitHub Workflow
   - variables to change (repository, etc.)- Create DockerHub public repo
   - process to create
+    - Once the file is created, push the file to your Github account and go to "Actions" to see if it was created successfully.
+  - The following is the contents of my yaml file:
+name: my-apache2
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+env:
+  DOCKER_HUB_REPO: my-apache2
+jobs:
+  build_and_push:
+    name: Build docker image and push to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout repo to runner
+        uses: actions/checkout@v2
+      - 
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - 
+        name: Login to DockerHub
+        uses: docker/login-action@v1 
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      - 
+        name: Build and push 
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:latest
+
+
