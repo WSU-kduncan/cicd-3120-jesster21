@@ -1,9 +1,9 @@
 name: my-apache2
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 env:
   DOCKER_HUB_REPO: my-apache2
 jobs:
