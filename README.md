@@ -81,4 +81,21 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.DOCKER_HUB_REPO }}:latest
 
+## Part 3 - Deployment
+
+### Documentation
+
+- Update `README.md` in main folder of your repo to include:
+
+- Container restart script
+  - what it does? The container restart script stops any containers that are currtently running and then pulls the latest container you set it to.
+- Webhook task definition file
+  - what it does? It executes the file that webhook needs. It will call the script that was made earlier called "pull-start.sh". If you do the steps correctly, you should get a message from webhook. I got "Redeploying API server".
+- Setting up a webhook on the server
+  - How you created you own listener
+    - I ran the command "/home/ubuntu/go/bin/webhook -hooks /home/ubuntu/redeploy.json -verbose"
+  - How you installed and are running the [webhook on GitHub](https://github.com/adnanh/webhook)
+    -I installed webhook from the github link (then it made me download webhook using "sudo apt install webhook" for whatever reason). I then ran it by the previous command and made some changes to my index.html to reflect that it worked.
+- Setting up a notifier in GitHub or DockerHub
+  - I set up to be notified in Github my logging into my account, going over to Settings and going down to Webhooks. I entered the url I made for Dockerhub and told it to notify me on everything.
 
